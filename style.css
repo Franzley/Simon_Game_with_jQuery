@@ -1,15 +1,46 @@
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
 body {
   text-align: center;
   background-color: #011f3f;
   user-select: none;
+  font-family: "Press Start 2P", cursive;
+  color: #fef2bf;
 }
 
 #level-title {
-  font-family: "Press Start 2P", cursive;
   font-size: 3rem;
-  margin: 5%;
-  color: #fef2bf;
+  margin: 3rem 0;
 }
+.play-btn{
+  font-family: "Press Start 2P", cursive;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  color: #5bbd72;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+.play-btn:hover{
+  color: #9070c0;
+  background: rgba(223, 104, 215, 0.112);
+}
+.is-running{
+  visibility: hidden;
+}
+.follow-pattern{
+  margin-bottom: 1rem;
+  color: #5bbd72;
+}
+
 
 .container {
   display: block;
@@ -17,13 +48,21 @@ body {
   margin: auto;
 }
 
+.button-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 450px;
+  gap: 2rem;
+  margin: auto;
+}
+
 .btn {
-  margin: 25px;
   display: inline-block;
   height: 200px;
   width: 200px;
   border: 10px solid black;
   border-radius: 20%;
+  cursor: pointer;
 }
 
 .game-over {
@@ -50,4 +89,24 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+@media (max-width: 768px) {
+  #level-title {
+    font-size: 1.5rem;
+  }
+  .play-btn{
+    font-size: 1.5rem;
+  }
+  
+  .button-container{
+    width: 200px;
+    gap: 1rem;
+  }
+  
+  .btn {
+    height: 100px;
+    width: 100px;
+  }
+  
 }
